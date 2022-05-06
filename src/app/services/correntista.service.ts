@@ -19,4 +19,8 @@ export class CorrentistaService {
     return this.http.post(`${baseUrl}/correntistas`, correntista
     )
   }
+
+  delete(correntistaId:any): Observable<any> {
+    return this.http.delete(`${baseUrl}/correntistas/${correntistaId}`)
+  }
 }

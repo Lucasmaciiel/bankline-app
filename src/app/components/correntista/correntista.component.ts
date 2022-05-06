@@ -50,4 +50,25 @@ export class CorrentistaComponent implements OnInit {
           console.log(error);
         });
   }
+
+  delete(correntistas: { id: any; }): void{
+
+    console.log(this.correntista.id)
+    const correntistaId = {
+      id:this.correntista.id
+    
+    };
+    console.log('id do correntista' + correntistaId);
+
+    this.correntistaService.delete(correntistas.id)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.exibirCorrentista();
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
 }
